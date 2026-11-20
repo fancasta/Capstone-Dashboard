@@ -1,56 +1,30 @@
+import { useMemo, useState } from "react";
+import { summarizeReports } from "./disclosures";
 import SummaryChart from "./SummaryChart";
 
-export default function DataSummary({Reports}) {
-   console.log("All Reports from IndustrySummary");
-   // Summary Reports by Year and Industry
-   let yearList = [...new Set(Reports.map(item => item.year))].sort(); 
-   let industryList = [...new Set(Reports.map(item => item.industry))].sort();
-   let summaryData = [];
-   for (var i = 0; i < yearList.length; i++) { 
-      for (var k = 0; k < industryList.length; k++) {
-         var currentYear = yearList[i];
-         var currentIndustry = industryList[k];
-         var filteredReports = Reports.filter((report) => {
-            return (report.year === currentYear && report.industry === currentIndustry);
-         });
-         console.log(currentYear); 
-         console.log(currentIndustry);
-         console.log(filteredReports);
-         var numReport = filteredReports.length; 
-         var numEmissionAmountVerified = filteredReports.reduce((sum, { emissionAmountVerified }) => sum + emissionAmountVerified, 0);
-         var numHasActiveProgram = filteredReports.reduce((sum, { hasActiveProgram }) => sum + hasActiveProgram, 0);
-         var numHasNetZeroGoal = filteredReports.reduce((sum, { hasNetZeroGoal }) => sum + hasNetZeroGoal, 0);
-         var numHasProtocol = filteredReports.reduce((sum, { hasProtocol }) => sum + hasProtocol, 0);
-         var numHasEmissionTargetVerified = filteredReports.reduce((sum, { emissionTargetVerified }) => sum + emissionTargetVerified, 0);
-         var numHasTransitionPlan = filteredReports.reduce((sum, { hasTransitionPlan }) => sum + hasTransitionPlan, 0);
-         var numHasLeadershipIncentive = filteredReports.reduce((sum, { hasLeadershipIncentive }) => sum + hasLeadershipIncentive, 0);
-         var numHasSupplierEngagement = filteredReports.reduce((sum, { hasSupplierEngagement }) => sum + hasSupplierEngagement, 0);
-         var numHasValueChainEngagement = filteredReports.reduce((sum, { hasValueChainEngagement }) => sum + hasValueChainEngagement, 0);
-         summaryData.push({
-            year: currentYear, 
-            industry: currentIndustry,
-            numReport: numReport,
-            numEmissionAmountVerified: numEmissionAmountVerified,
-            numHasActiveProgram: numHasActiveProgram,
-            numHasNetZeroGoal: numHasNetZeroGoal,
-            numHasProtocol: numHasProtocol,
-            numHasEmissionTargetVerified: numHasEmissionTargetVerified,
-            numHasTransitionPlan: numHasTransitionPlan,
-            numHasLeadershipIncentive: numHasLeadershipIncentive,
-            numHasSupplierEngagement: numHasSupplierEngagement,
-            numHasValueChainEngagement: numHasValueChainEngagement
-         })
-      }
+export default function DataSummary({ Reports }) {
+  const groups = useMemo(() => summarizeReports(Reports), [Reports]);
+  const [preferredYear, setYear] = useState("");
+  const [preferredIndustry, setIndustry] = useState("");
+  const years = Array.from(groups.keys()).sort().reverse();
+  if (years.length === 0) return <section><h2>Disclosure summary</h2><p>No reports available.</p></section>;
 
-   }
-   console.log("SummaryData Data Summary: ");
-   console.log(summaryData);
-   console.log(yearList);
-   console.log(industryList);
-   return (
-      <div>
-         <h1>Data Summary</h1>
-         <SummaryChart summaryData={summaryData} yearList={yearList} industryList={industryList}/>
+  const year = groups.has(preferredYear) ? preferredYear : years[0];
+  const sectors = groups.get(year);
+  const industries = Array.from(sectors.keys()).sort();
+  const industry = sectors.has(preferredIndustry) ? preferredIndustry : industries[0];
+  return (
+    <section className="disclosure-panel" aria-label="Disclosure summary">
+      <h2>Climate disclosure summary</h2>
+      <div className="disclosure-filters">
+        <label>Reporting year <select value={year} onChange={e => setYear(e.target.value)}>
+          {years.map(y => <option key={y}>{y}</option>)}
+        </select></label>
+        <label>Industry <select value={industry} onChange={e => setIndustry(e.target.value)}>
+          {industries.map(i => <option key={i}>{i}</option>)}
+        </select></label>
       </div>
-   );
+      <SummaryChart group={sectors.get(industry)} />
+    </section>
+  );
 }

@@ -2,6 +2,18 @@
 
 Which companies report a net-zero goal or a transition plan, and how common are those disclosures within an industry? This capstone dashboard lets a reader search for a company, inspect its reports and compare counts of reported practices across industries and years.
 
+## My contribution
+
+I added CSV upload to the React frontend, connected the report components and combined separate industry and year summaries into a single view. These commits show my part of the team project. [CSV upload](https://github.com/fancasta/Capstone-Dashboard/commit/2e62c2ca) · [Report components](https://github.com/fancasta/Capstone-Dashboard/commit/c026c8bb) · [Year and industry summary](https://github.com/fancasta/Capstone-Dashboard/commit/4f860cab)
+
+## From report rows to disclosure counts
+
+The dashboard groups records in one pass by reporting year and industry. Each row contributes one to the group total. An affirmative indicator contributes one to that disclosure's count. Missing indicators contribute zero to the count and the report stays in the denominator. The filter lists come from groups present in the data.
+
+![Screenshot of the running React summary with six fictional manufacturing reports, five net-zero goals and three transition plans](docs/disclosure-summary.png)
+
+This screenshot uses the [synthetic report fixture](examples/mock-reports.json). Six of its eight rows are manufacturing reports from 2024. Five of those six disclose a net-zero goal and three disclose a transition plan. The other two rows belong to different groups. [Aggregation code](frontend/src/components/disclosures.js) · [Filter and aggregation tests](frontend/src/components/DataSummary.test.js)
+
 ## Explore the dashboard
 
 - **Look up a company.** Selecting a company loads its reports through the backend API. The company view lets readers move from a summary to individual report records. [Dashboard page](frontend/src/pages/HomeDashboard.js) · [Report table](frontend/src/components/ReportTable.js)

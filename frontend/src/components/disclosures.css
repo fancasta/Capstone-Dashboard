@@ -1,0 +1,12 @@
+.disclosure-panel { color: #19332f; width: min(100%, 52rem); font-family: system-ui, sans-serif; }
+.disclosure-panel h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 650; margin: 0 0 1rem; }
+.disclosure-panel p { color: #35584f; margin: 1.3rem 0 .6rem; }
+.disclosure-filters { display: flex; flex-wrap: wrap; gap: .7rem 1rem; }
+.disclosure-filters label { display: grid; gap: .2rem; font-size: .9rem; font-weight: 600; }
+.disclosure-filters select { font: inherit; padding: .35rem .5rem; color: #183c31; border: 1px solid #839f96; border-radius: .25rem; background: white; }
+.disclosure-bars { margin: 0; padding: 0; list-style: none; }
+.disclosure-bars li { display: grid; grid-template-columns: minmax(9rem, 1fr) minmax(3rem, 1.25fr) 2ch; align-items: center; gap: .75rem; padding: .45rem 0; border-bottom: 1px solid #e0e9e5; }
+.disclosure-track, .disclosure-track > span { display: block; height: .65rem; border-radius: .15rem; }
+.disclosure-track { background: #e9f0ed; }
+.disclosure-track > span { background: #11745f; }
+.disclosure-bars strong { text-align: right; font-variant-numeric: tabular-nums; }
