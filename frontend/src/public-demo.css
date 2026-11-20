@@ -1,0 +1,5 @@
+.public-demo .climate-head { padding-bottom: 1.4rem; }
+.public-demo .climate-head h1 { margin-bottom: .6rem; }
+.public-demo .climate-head p { margin: 0; max-width: 60ch; color: #e1eee7; }
+.public-demo footer { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin: 1rem 0; }
+.public-demo :focus-visible { outline: 3px solid #b57520; outline-offset: 3px; }
