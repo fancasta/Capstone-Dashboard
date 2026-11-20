@@ -1,20 +1,13 @@
-import React, {useState, useEffect} from 'react';
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Unstable_Grid2";
-import CompanyHeader from '../components/CompanyHeader';
-import ReportTable from './ReportTable';
+import { indicators } from "./disclosures";
 
-// Child Components
-
-export default function Report({Report}) {
-    console.log(Report);
-    return (
-        <div style={{ backgroundColor: "#0F172A", width:"100%", height: "100%" }}>
-            <CompanyHeader 
-                companyName={Report.companyName} 
-                year={Report.year} 
-                industry={Report.industry}/>
-            <ReportTable Report={Report}/>
-        </div>
-    );
+export default function Report({ Report: report }) {
+  return <article className="filing-detail">
+    <p className="doc-type">{report.industry} · {report.year}</p><h3>{report.companyName}</h3>
+    <dl>{indicators.map(([field, label]) => {
+      const passage = report[field + "Sentences"];
+      return <div key={field}><dt>{label}</dt><dd>{passage && passage.length > 220 ?
+        <details><summary>{passage.slice(0, 180)}…</summary><p>{passage}</p></details> :
+        passage || "No passage recorded."}</dd></div>;
+    })}</dl>
+  </article>;
 }

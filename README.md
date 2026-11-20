@@ -2,9 +2,9 @@
 
 Which companies report a net-zero goal or a transition plan, and how common are those disclosures within an industry? This capstone dashboard lets a reader search for a company, inspect its reports and compare counts of reported practices across industries and years.
 
-## My contribution
+The dashboard opens on the reporting overview. Use **Company reports** to inspect an individual filing or **Published examples** to explore page-level findings from Oracle, Anthropic and OpenAI. The published examples are available even when the local report API is offline. [Case-study methods and sources](https://github.com/fancasta/climate-disclosure-explorer/blob/main/CASE_STUDIES.md)
 
-I added CSV upload to the React frontend, connected the report components and combined separate industry and year summaries into a single view. These commits show my part of the team project. [CSV upload](https://github.com/fancasta/Capstone-Dashboard/commit/2e62c2ca) · [Report components](https://github.com/fancasta/Capstone-Dashboard/commit/c026c8bb) · [Year and industry summary](https://github.com/fancasta/Capstone-Dashboard/commit/4f860cab)
+![Published report explorer with a page-level finding and a source link](docs/published-examples.png)
 
 ## From report rows to disclosure counts
 

@@ -1,144 +1,80 @@
-import React, {useState, useEffect} from 'react';
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Unstable_Grid2";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import DataSummary from "../components/DataSummary";
+import FileUpload from "../components/FileUpload";
+import Report from "../components/Report";
+import PublishedExamples from "../components/PublishedExamples";
+import "./explorer.css";
 
-// Child Components
-import CompSearchBar from '../components/CompSearchBar';
-import ReportsByCompany from '../components/ReportsByCompany';
-import Report from '../components/Report';
-import FileUpload from '../components/FileUpload';
-import DataSummary from '../components/DataSummary';
+const api = "http://localhost:6868";
+const views = ["Overview", "Company reports", "Published examples"];
 
+export default function HomeDashboard({ initialView = "Overview" }) {
+  const [view, setView] = useState(initialView);
+  const [companies, setCompanies] = useState([]);
+  const [rows, setRows] = useState([]);
+  const [status, setStatus] = useState("Loading local reports…");
+  const [company, setCompany] = useState("");
+  const [records, setRecords] = useState([]);
+  const [selected, setSelected] = useState("");
+  const [companyStatus, setCompanyStatus] = useState("");
 
-function HomeDashboard() {
-    const [companies, setCompanies] = useState([]);
-    const [company, setCompany] = useState("");
-    const [allReports, setAllReports] = useState([]);
-    const [reports, setReports] = useState([]);
-    const [report, setReport] = useState();
+  useEffect(() => {
+    let active = true;
+    Promise.all([axios.get(api + "/company"), axios.get(api + "/report")])
+      .then(([directory, reports]) => {
+        if (!active) return;
+        setCompanies(directory.data);
+        setRows(reports.data);
+        setStatus("");
+      })
+      .catch(() => { if (active) setStatus("Local reports are unavailable. Start the API or open Published examples."); });
+    return () => { active = false; };
+  }, []);
 
-    const fetchData = async() => {
-        const resComapny = await axios.get("http://localhost:6868/company")
-        const dataCompany = await resComapny.data
-        setCompanies(dataCompany)
+  useEffect(() => {
+    if (!company) return;
+    let active = true;
+    axios.get(api + "/report/companyName/" + encodeURIComponent(company))
+      .then(({ data }) => {
+        if (!active) return;
+        const ordered = [...data].sort((a, b) => Number(b.year) - Number(a.year));
+        setRecords(ordered);
+        setSelected(ordered.length ? "0" : "");
+        setCompanyStatus(ordered.length ? "" : "No filings found for this company.");
+      })
+      .catch(() => { if (active) setCompanyStatus("Could not load this company's reports."); });
+    return () => { active = false; };
+  }, [company]);
 
-        const resAllReports = await axios.get("http://localhost:6868/report")
-        const dataAllReports = await resAllReports.data
-        setAllReports(dataAllReports)
-    }
+  function selectCompany(value) {
+    setSelected(""); setRecords([]); setCompany(value);
+    setCompanyStatus(value ? "Loading filings…" : "");
+  }
 
-    useEffect(() => {
-        fetchData()
-    }, []);
-    
-    const handleCompanySelect = async(companyName) => {
-        console.log("Company from HandleCompanySelect" + companyName)
-        setCompany(companyName);
-        console.log("Handle Select Company, HomeDashboard:" + company);
-        var compNameWithoutSpace = companyName.replace(' ', '_');
-        console.log("http://localhost:6868/report/companyName/" + compNameWithoutSpace);
-        const resReport = await axios.get("http://localhost:6868/report/companyName/" + companyName)
-        const dataReport = await resReport.data
-        setReports(dataReport)
-    }
-
-    const handleReportSelect = (year) => {
-        console.log("All reports");
-        console.log(reports);
-        if (year !== "Default option") {
-            var chosen_report = reports.filter((report) => {
-                console.log(report.year);
-                console.log(year);
-                return report.year.toString() === year;
-            });
-            console.log("1 Report");
-            console.log(chosen_report);
-            setReport(chosen_report[0]);
-            console.log("Handle Select Report, HomeDashboard:" + year);
-        }
-    }
-
-    return (
-        <div style={{ backgroundColor: "#0F172A", height: "100vh" }}>
-
-        <Box
-            sx={{
-            width: "100%",
-            backgroundColor: "white",
-            padding: "20px",
-            margin: "10px",
-            borderRadius: "10px",
-            marginBottom: "10px",
-            }}
-        >
-            <FileUpload />
-        </Box>
-
-        <Box
-            sx={{
-            width: "100%",
-            backgroundColor: "white",
-            padding: "20px",
-            margin: "10px",
-            borderRadius: "10px",
-            marginBottom: "10px",
-            }}
-        >
-
-        <Grid container>
-            <Grid item sx={{
-                margin: "10px"
-            }}>
-                <CompSearchBar companyData={companies} handleCompanySelect={handleCompanySelect}/>
-            </Grid>
-            <Grid item sx={{
-                margin: "10px"
-            }}>
-                <ReportsByCompany reportData={reports} handleReportSelect={handleReportSelect}/>
-            </Grid>
-        </Grid>
-
-        </Box>
-
-        
-        <Box
-            sx={{
-            width: "100%",
-            backgroundColor: "white",
-            padding: "20px",
-            margin: "10px",
-            borderRadius: "10px",
-            }}
-        >      
-        <Grid container>
-            <Grid item>
-                {report
-                    ? <Report Report={report} />
-                    : <p>No report found</p>
-                }
-            </Grid>
-        </Grid>
-        </Box>
-
-        <Box
-            sx={{
-            width: "100%",
-            backgroundColor: "white",
-            padding: "20px",
-            margin: "10px",
-            borderRadius: "10px",
-            }}
-        >      
-        <Grid container>
-            <Grid item>
-                <DataSummary Reports={allReports} />
-            </Grid>
-        </Grid>
-        </Box>
-
-        </div>
-    );
+  return <main className="climate-shell">
+    <header className="climate-head"><h1>Climate disclosure explorer</h1>
+      <nav aria-label="Dashboard views">{views.map(item =>
+        <button key={item} aria-pressed={view === item} onClick={() => setView(item)}>{item}</button>)}</nav>
+    </header>
+    {view === "Published examples" ? <PublishedExamples /> : <>
+      {status && <p role="status" className="climate-card">{status}</p>}
+      {view === "Overview" ? <>
+        <div className="climate-totals">{[
+          [rows.length, "Report records"], [new Set(rows.map(r => r.industry)).size, "Industries"],
+          [new Set(rows.map(r => r.year)).size, "Reporting years"]
+        ].map(([value, label]) => <div key={label}><b>{status ? "—" : value}</b><span>{label}</span></div>)}</div>
+        {!status && <div className="climate-card"><DataSummary Reports={rows} /></div>}
+        <details className="climate-card"><summary>Import a report CSV</summary><FileUpload /></details>
+      </> : <section className="climate-card"><h2>Company filings</h2>
+        <div className="climate-controls"><label>Company<select aria-label="Company" value={company} onChange={e => selectCompany(e.target.value)}>
+          <option value="">Select a company</option>{[...new Set(companies.map(c => c.companyName))].sort().map(c => <option key={c}>{c}</option>)}
+        </select></label>
+        {records.length > 0 && <label>Filing<select aria-label="Filing" value={selected} onChange={e => setSelected(e.target.value)}>{records.map((r,i) =>
+          <option key={r.id ?? i} value={i}>{r.year} · {r.industry}</option>)}</select></label>}</div>
+        {companyStatus && <p role="status">{companyStatus}</p>}
+        {records[selected] && <Report Report={records[selected]} />}
+      </section>}
+    </>}
+  </main>;
 }
-
-export default HomeDashboard;

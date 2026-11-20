@@ -1,0 +1,198 @@
+{
+  "sources": {
+    "Oracle": {
+      "title": "Environmental and Social Impact Report · FY2024",
+      "type": "Corporate disclosure",
+      "url": "https://www.oracle.com/a/ocom/docs/environmental-and-social-impact-report-2024.pdf",
+      "sha256": "f4c5b5250f5170de280ca0da9e114da7287e16c49fb4c4ca41f0c9e4714c18cd",
+      "queries": [
+        {
+          "label": "Renewable electricity in the cloud",
+          "query": "renewable electricity cloud data centers renewable energy",
+          "review_page": 37
+        },
+        {
+          "label": "Water and waste targets",
+          "query": "potable water use waste to landfill per square foot",
+          "review_page": 36
+        }
+      ]
+    },
+    "Anthropic": {
+      "title": "Build AI in America · July 2025",
+      "type": "Policy report",
+      "url": "https://assets.claude.com/0dc382a2086f6a054eeb17e8a531bd9625b8e6e5.pdf",
+      "sha256": "c929d73be07db93086f78818bd5145caee2d01da7344b93e1c2d7966e96e71bf",
+      "queries": [
+        {
+          "label": "Projected power demand",
+          "query": "electric capacity gigawatts AI workloads United States 2028",
+          "review_page": 5
+        },
+        {
+          "label": "Transmission upgrades",
+          "query": "transmission upgrades siting approval power lines federal lands",
+          "review_page": 19
+        }
+      ]
+    },
+    "OpenAI": {
+      "title": "AI Infrastructure That Works for America · November 2026",
+      "type": "Policy blueprint",
+      "url": "https://cdn.openai.com/pdf/compute-campus-policy-blueprint.pdf",
+      "sha256": "dd44ad43a77545863468e47dc27b684653c318d6b6a1fa097983c1e48e7d3219",
+      "queries": [
+        {
+          "label": "Power-use reporting",
+          "query": "annual power usage effectiveness facility electricity reporting",
+          "review_page": 8
+        },
+        {
+          "label": "On-site cooling",
+          "query": "closed-loop cooling water consumption low-emission backup generation",
+          "review_page": 8
+        }
+      ]
+    }
+  },
+  "results": [
+    {
+      "publisher": "Oracle",
+      "pages": 91,
+      "label": "Renewable electricity in the cloud",
+      "query": "renewable electricity cloud data centers renewable energy",
+      "review_page": 37,
+      "hits": [
+        {
+          "page": 37,
+          "cosine": 0.4393
+        },
+        {
+          "page": 42,
+          "cosine": 0.2092
+        },
+        {
+          "page": 3,
+          "cosine": 0.1897
+        }
+      ],
+      "interpretation": "Oracle reports that renewable sources supplied 92% of electricity used in its cloud. The 100% figures on the same page refer to data centres in specific regions.",
+      "kind": "Reported metric"
+    },
+    {
+      "publisher": "Oracle",
+      "pages": 91,
+      "label": "Water and waste targets",
+      "query": "potable water use waste to landfill per square foot",
+      "review_page": 36,
+      "hits": [
+        {
+          "page": 36,
+          "cosine": 0.3623
+        },
+        {
+          "page": 42,
+          "cosine": 0.1595
+        },
+        {
+          "page": 89,
+          "cosine": 0.1507
+        }
+      ],
+      "interpretation": "The FY2024 report lists 2025 goals to cut potable water use and landfill waste per square foot by 33%. These are targets with an intensity denominator.",
+      "kind": "Corporate target"
+    },
+    {
+      "publisher": "Anthropic",
+      "pages": 33,
+      "label": "Projected power demand",
+      "query": "electric capacity gigawatts AI workloads United States 2028",
+      "review_page": 5,
+      "hits": [
+        {
+          "page": 3,
+          "cosine": 0.2959
+        },
+        {
+          "page": 7,
+          "cosine": 0.1785
+        },
+        {
+          "page": 2,
+          "cosine": 0.1652
+        }
+      ],
+      "interpretation": "Anthropic projects that US AI workloads may need at least 50 GW of electrical capacity by 2028. Page 3 summarizes the estimate. Page 5 explains its national scope.",
+      "kind": "Demand forecast"
+    },
+    {
+      "publisher": "Anthropic",
+      "pages": 33,
+      "label": "Transmission upgrades",
+      "query": "transmission upgrades siting approval power lines federal lands",
+      "review_page": 19,
+      "hits": [
+        {
+          "page": 19,
+          "cosine": 0.2348
+        },
+        {
+          "page": 33,
+          "cosine": 0.1305
+        },
+        {
+          "page": 11,
+          "cosine": 0.1074
+        }
+      ],
+      "interpretation": "The report proposes faster approval of transmission upgrades. It discusses when federal siting authority could accelerate a project.",
+      "kind": "Policy proposal"
+    },
+    {
+      "publisher": "OpenAI",
+      "pages": 18,
+      "label": "Power-use reporting",
+      "query": "annual power usage effectiveness facility electricity reporting",
+      "review_page": 8,
+      "hits": [
+        {
+          "page": 8,
+          "cosine": 0.2003
+        },
+        {
+          "page": 12,
+          "cosine": 0.0759
+        },
+        {
+          "page": 2,
+          "cosine": 0.0653
+        }
+      ],
+      "interpretation": "OpenAI recommends consistent reporting of facility electricity use and annual power usage effectiveness. A recommendation establishes no measured efficiency value.",
+      "kind": "Reporting proposal"
+    },
+    {
+      "publisher": "OpenAI",
+      "pages": 18,
+      "label": "On-site cooling",
+      "query": "closed-loop cooling water consumption low-emission backup generation",
+      "review_page": 8,
+      "hits": [
+        {
+          "page": 8,
+          "cosine": 0.2631
+        },
+        {
+          "page": 7,
+          "cosine": 0.1628
+        },
+        {
+          "page": 11,
+          "cosine": 0.053
+        }
+      ],
+      "interpretation": "OpenAI describes a planned recirculating cooling system for the Effingham site. The passage describes a design choice and anticipated water demand.",
+      "kind": "Planned site design"
+    }
+  ]
+}
