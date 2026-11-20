@@ -1,12 +1,16 @@
-## Instruction on running the application
-1. Download Docker Desktop
-2. Open Docker Desktop and let it start running
-3. Go to the "Capstone Dashboard" folder
-4. Type "docker-compose up --build"
+# Exploring corporate climate disclosures
 
-## Links to different services
-|Service Name|Service Link|Comment|     
-|----|-----|-------|      
-|frontend|localhost:3000||
-|backend|localhost:6868||
-|Adminer|localhost:8000|user: root, password: password| 
+Which companies report a net-zero goal or a transition plan, and how common are those disclosures within an industry? This capstone dashboard lets a reader search for a company, inspect its reports and compare counts of reported practices across industries and years.
+
+## Explore the dashboard
+
+- **Look up a company.** Selecting a company loads its reports through the backend API. The company view lets readers move from a summary to individual report records. [Dashboard page](frontend/src/pages/HomeDashboard.js) · [Report table](frontend/src/components/ReportTable.js)
+- **Compare reporting practices.** The summary groups report records by year and industry. Its chart counts indicators such as verified emissions amounts, net-zero goals, transition plans and supplier engagement. The bars count disclosures in the dataset. They do not measure tonnes of emissions or progress towards a target. [Aggregation logic](frontend/src/components/DataSummary.js) · [Chart](frontend/src/components/SummaryChart.js)
+
+## How the application fits together
+
+The React frontend requests company and report records from a Node.js backend. The backend reads from MySQL, and the repository includes a SQL backup for the project database. [API routes](backend/routes) · [Database files](mysql) · [Docker Compose setup](docker-compose.yml)
+
+## Run locally
+
+With Docker running, execute `docker compose up --build` from the repository root. Open `http://localhost:3000`, select a company and inspect its reports, or choose a year and industry in the summary chart. The API uses port `6868` and the local Adminer database viewer uses port `8000`. Run `docker compose down` to stop the services.
