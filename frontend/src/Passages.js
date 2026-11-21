@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { words } from "./corpusSearch";
 import oracleNotes from "./oraclePageNotes.json";
 import notes from "./fieldNotes.json";
+import { RouteLink } from "./disclosureNavigation";
+import { reviewPage, transitionReview } from "./transitionReview";
 
 let pdfModule;
 function getPdfJs() {
@@ -34,7 +36,9 @@ function passages(text, query) {
 }
 
 export default function Passages({report,page,query}) {
-  const note=notes.find(n=>n.publisher===report.publisher&&n.page===page) ||
+  const casePage = report.publisher === transitionReview.publisher &&
+    transitionReview.evidence.find(item => item.page === page);
+  const note=casePage || notes.find(n=>n.publisher===report.publisher&&n.page===page) ||
     (report.publisher==="Oracle" && oracleNotes[page]);
   const [result,setResult]=useState(null);
   useEffect(()=>{
@@ -52,7 +56,13 @@ export default function Passages({report,page,query}) {
     load().catch(()=>{if(active)setResult([]);});
     return ()=>{active=false;if(job)job.destroy().catch(()=>{});};
   },[report.url,report.publisher,page,query,note]);
-  if(note)return <>{note.excerpt&&<blockquote>“{note.excerpt}”</blockquote>}<p className="reading-note">{note.note}</p></>;
+  if(note)return <>{note.excerpt&&<blockquote>“{note.excerpt}”</blockquote>}<p className="reading-note">{note.note}</p>
+    {casePage && <div className="case-related"><strong>Financing discussion</strong>
+      <p>{transitionReview.question}</p>
+      {transitionReview.evidence.filter(item => item.page !== page).map(item =>
+        <RouteLink key={item.page} to={reviewPage(item.page)}>{item.label} · PDF p. {item.page} →</RouteLink>
+      )}
+    </div>}</>;
   if(report.publisher==="Oracle")return <p className="reading-note">Oracle provides this page in its own PDF viewer. Follow the source link to read the original text.</p>;
   if(!result)return <p className="loading-passage" role="status">Reading the source page…</p>;
   if(!result.length)return <p className="reading-note">The text preview is unavailable. Open the cited PDF page to read the disclosure.</p>;

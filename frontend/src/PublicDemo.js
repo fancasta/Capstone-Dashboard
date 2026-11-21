@@ -17,7 +17,8 @@ function Explorer({catalog}) {
   const [terms,setTerms]=useState(null);
   const [error,setError]=useState(false);
   const [attempt,setAttempt]=useState(0);
-  const shouldFocus=useRef(false);
+  // Page citations can open below the report controls, particularly on a phone.
+  const focusTarget=useRef(route.publisher && route.page ? "evidence-heading" : null);
   const position=useRef(null);
   const go=useCallback((next,{scroll=true}={})=>{
     const nextUrl=urlFor(next);
@@ -25,7 +26,11 @@ function Explorer({catalog}) {
     const oldRoute=readRoute(catalog);
     window.history.replaceState({disclosureScroll:window.scrollY},"",window.location.href);
     window.history.pushState(null,"",nextUrl);
-    shouldFocus.current=scroll && (oldRoute.explore!==!!next.explore || oldRoute.publisher!==(next.publisher||""));
+    focusTarget.current=null;
+    if(scroll){
+      if(next.publisher && next.page)focusTarget.current="evidence-heading";
+      else if(oldRoute.explore!==!!next.explore || oldRoute.publisher!==(next.publisher||""))focusTarget.current="main";
+    }
     position.current=scroll?0:null;
     setRoute(readRoute(catalog));
   },[catalog]);
@@ -35,7 +40,7 @@ function Explorer({catalog}) {
     if(window.location.pathname+window.location.search!==canonical)window.history.replaceState(window.history.state,"",canonical);
     function back(){
       position.current=window.history.state?.disclosureScroll ?? 0;
-      shouldFocus.current=true;
+      focusTarget.current="main";
       setRoute(readRoute(catalog));
     }
     window.addEventListener("popstate",back);
@@ -46,9 +51,11 @@ function Explorer({catalog}) {
     if(route.explore && !terms)return;
     // Move focus after React has finished replacing the previous view's controls.
     const frame=window.requestAnimationFrame(()=>{
-      if(shouldFocus.current)document.getElementById("main")?.focus({preventScroll:true});
-      if(position.current!==null)window.scrollTo(0,position.current);
-      shouldFocus.current=false;
+      const target=focusTarget.current && document.getElementById(focusTarget.current);
+      if(target)target.focus({preventScroll:true});
+      if(target?.id==="evidence-heading")target.scrollIntoView({block:"start"});
+      else if(position.current!==null)window.scrollTo(0,position.current);
+      focusTarget.current=null;
       position.current=null;
     });
     return ()=>window.cancelAnimationFrame(frame);

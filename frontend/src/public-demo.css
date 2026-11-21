@@ -45,6 +45,17 @@ body { margin:0; }
 .disclosure .evidence-sheet blockquote {font:normal clamp(1.03rem,1.52vw,1.32rem)/1.47 var(--serif);margin:16px 0 15px;}
 .disclosure mark {color:inherit;background:#e0eca5;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
 .disclosure .evidence-sheet a {font-weight:650;font-size:.84rem;}
+.disclosure .case-evidence {margin-top:16px;}
+.disclosure .case-evidence>div {border-top:1px solid var(--rule);padding:10px 0;}
+.disclosure .case-evidence a {display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:2px 12px;font-size:.95rem;text-decoration:none;}
+.disclosure .case-evidence a span {font-size:.79rem;white-space:nowrap;text-decoration:underline;}
+.disclosure .case-evidence a:hover {text-decoration:underline;}
+.disclosure .case-evidence p,.disclosure .case-question p,.disclosure .case-related p {font-size:.89rem;line-height:1.45;margin-top:3px;}
+.disclosure .case-question,.disclosure .case-related {background:#e9efde;border-left:3px solid #648157;padding:10px 13px;margin-top:6px;}
+.disclosure .case-question strong,.disclosure .case-related strong {font-size:.8rem;color:var(--green);}
+.disclosure .case-related {margin-top:16px;}
+.disclosure #evidence-heading {scroll-margin-top:24px;}
+.disclosure .case-related a {display:inline-block;margin-top:7px;font-size:.88rem;font-weight:650;}
 .disclosure .collection-band {border-block:1px solid var(--rule);background:#eff2e7;}
 .disclosure .stat-row {display:grid;grid-template-columns:repeat(4,1fr);padding-block:17px;}
 .disclosure .stat-row>div {display:flex;gap:10px;align-items:baseline;justify-content:center;border-left:1px solid #bfccbb;}

@@ -6,7 +6,11 @@ How do companies describe water use, labour rights or board oversight, and where
 
 This dashboard grew out of the **NUS Business Analytics capstone for NatWest Markets**, August–December 2022. The team used machine learning to explore decarbonisation strategies. The original React, Node.js and MySQL application compares company indicators by sector and reporting year. The later public dashboard extends that work across environmental, social and governance topics.
 
-[![Home page with a cited report passage and questions to explore](docs/esg-home.png)](https://fancasta.github.io/climate-disclosure-explorer/)
+Bankers preparing a financing discussion need to see which emissions a company’s pledge covers and what progress it can show. Different definitions and long reports make peer comparisons slow. The capstone links each indicator to a passage so an analyst can check its scope and bring specific questions to a client meeting.
+
+**Worked example.** Shell’s 2021 report set a 2030 target to halve net Scope 1 and 2 emissions under its operational control against 2016 levels. Its results section lists asset sales among the reasons direct emissions fell. An analyst could ask how much of the decline came from changes at sites Shell kept operating. [Read the target on PDF page 92](https://fancasta.github.io/climate-disclosure-explorer/?publisher=Shell&page=92) · [Check the reported progress on PDF page 95](https://fancasta.github.io/climate-disclosure-explorer/?publisher=Shell&page=95)
+
+[![Homepage with a worked financing discussion using Shell’s 2021 report](docs/esg-home.png)](https://fancasta.github.io/climate-disclosure-explorer/)
 
 | Guided search | Matching pages | Reports |
 | --- | ---: | ---: |

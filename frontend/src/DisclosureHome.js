@@ -1,5 +1,5 @@
 import { RouteLink } from "./disclosureNavigation";
-import notes from "./fieldNotes.json";
+import { reviewPage, transitionReview } from "./transitionReview";
 
 const questions = [
   ["Water stewardship","How do companies manage water use?"],
@@ -7,16 +7,17 @@ const questions = [
   ["Board independence","Where do companies describe board independence?"]
 ];
 
-function EvidencePreview({catalog}) {
-  const note = notes.find(n => n.publisher === "NRG Energy" && n.page === 42);
-  const report = catalog.reports.find(r=>r.publisher===note.publisher);
-  return <aside className="evidence-preview" aria-label="Example disclosure">
+function BankingExample() {
+  return <aside className="evidence-preview" aria-labelledby="banking-question" id="banking-example">
     <div className="plate-grid" aria-hidden="true"/>
     <div className="evidence-sheet">
-      <div className="sheet-header"><span className="sheet-mark" aria-hidden="true"/><span>Report excerpt</span><span className="folio">p. {note.page}</span></div>
-      <h2>{report.publisher}</h2><p className="sheet-caption">{report.title} · {report.edition}</p>
-      <blockquote>“cooling towers that <mark>reduce water consumption</mark> and environmental impact”</blockquote>
-      <RouteLink to={{explore:true, topic:"Water stewardship",publisher:report.publisher,page:note.page}}>Trace this passage <span aria-hidden="true">→</span></RouteLink>
+      <div className="sheet-header"><span className="sheet-mark" aria-hidden="true"/>Worked example · Financing discussion</div>
+      <h2 id="banking-question">What sits behind Shell’s 2050 pledge?</h2>
+      <p className="sheet-caption">{transitionReview.title}</p>
+      <div className="case-evidence">{transitionReview.evidence.map(({page, label, summary}) =>
+        <div key={page}><RouteLink to={reviewPage(page)}>{label} <span>PDF p. {page} →</span></RouteLink><p>{summary}</p></div>
+      )}</div>
+      <div className="case-question"><strong>Ask at the client meeting</strong><p>{transitionReview.question}</p></div>
     </div>
   </aside>;
 }
@@ -25,10 +26,10 @@ export default function DisclosureHome({catalog}) {
   const sectors = new Set(catalog.reports.map(r=>r.sector));
   return <div className="home-body"><section className="home-intro frame">
     <div className="hero-copy"><p className="eyebrow"><i/> NUS capstone · NatWest Markets</p>
-      <h1>Find the evidence in <em>ESG reports.</em></h1>
-      <p className="intro-deck">Search environmental, social and governance disclosures across companies. See which reports mention a topic, then read the passage behind each match.</p>
+      <h1>What backs a company’s <em>climate pledge?</em></h1>
+      <p className="intro-deck">Before a financing discussion, a banker needs to know what a company has promised and what has changed. Targets, baselines and results can sit pages apart. Use the explorer to find the evidence, compare companies and decide what to ask next.</p>
       <RouteLink to={{explore:true}} className="primary">Explore reports <span aria-hidden="true">→</span></RouteLink>
-    </div><EvidencePreview catalog={catalog}/>
+    </div><BankingExample/>
   </section>
   <div className="collection-band"><div className="frame stat-row">
     {[[catalog.reports.length,"public reports"],[catalog.pages.length,"searchable pages"],[sectors.size,"sectors"],[catalog.topics.length,"guided topics"]].map(([n,label])=><div key={label}><strong>{n.toLocaleString("en")}</strong><span>{label}</span></div>)}
@@ -48,5 +49,5 @@ export default function DisclosureHome({catalog}) {
       <li><strong>Compare companies</strong><span>See how many pages match in each report. Narrow to a sector if needed.</span></li>
       <li><strong>Check the source</strong><span>Open a company, read a passage and follow its page reference into the PDF.</span></li></ol>
   </div></section>
-  <section className="frame origin"><h2>About the project</h2><p>The NUS Business Analytics capstone for NatWest Markets (August–December 2022) compared nine climate-disclosure indicators across companies. Its long-term net-zero classifier used a <a href="https://github.com/CWei88/Group17-Capstone/blob/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/training_datasets/Attribute%2012/A12.csv">training set of 1,003 labelled sentences</a>. The later public explorer lets you search 27 reports across all three ESG areas.</p></section></div>;
+  <section className="frame origin"><h2>About the project</h2><p>NatWest Markets wanted to compare corporate transition plans, but companies described emissions and targets in different ways across lengthy reports. The NUS Business Analytics capstone (August–December 2022) used machine learning to flag passages for bankers to review across nine climate indicators. Its long-term net-zero classifier was developed and evaluated on a <a href="https://github.com/CWei88/Group17-Capstone/blob/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/training_datasets/Attribute%2012/A12.csv">dataset of 1,003 labelled sentences</a>. The later public explorer lets you search 27 reports across all three ESG areas.</p></section></div>;
 }

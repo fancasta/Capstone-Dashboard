@@ -82,7 +82,7 @@ function ReportReader({catalog,route,group,chosen}) {
         {hits.map((h,i)=><option key={h.id} value={h.page}>{isQuery?"Match "+(i+1)+" · ":""}Page {h.page}</option>)}</select>
       <div className="page-nav"><button aria-label="Previous page in results" disabled={!idx} onClick={()=>turn(idx-1)}>← Previous</button><button aria-label="Next page in results" disabled={idx===hits.length-1} onClick={()=>turn(idx+1)}>Next →</button></div>
     </div><article className="source-paper" aria-live="polite"><div className="sheet-header"><span className="sheet-mark" aria-hidden="true"/><span>Report evidence</span><span className="folio">{idx+1} / {hits.length}</span></div>
-      <h2>PDF page {selected.page}</h2>
+      <h2 id="evidence-heading" tabIndex="-1">PDF page {selected.page}</h2>
       <Passages key={report.publisher+"|"+selected.page+"|"+terms} report={report} page={selected.page} query={terms}/>
       <div className="citation"><div><strong>{report.publisher}</strong><span>{report.edition} · PDF p. {selected.page}</span></div>
         <a className="primary" href={sourcePageUrl(report,selected.page)} target="_blank" rel="noreferrer">Open source page <span aria-hidden="true">↗</span></a></div>
