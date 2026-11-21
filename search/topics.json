@@ -1,0 +1,273 @@
+[
+  {
+    "name": "Greenhouse gas emissions",
+    "pillar": "Environmental",
+    "phrases": [
+      "greenhouse gas",
+      "ghg emissions",
+      "carbon emissions"
+    ]
+  },
+  {
+    "name": "Renewable electricity",
+    "pillar": "Environmental",
+    "phrases": [
+      "renewable electricity",
+      "renewable energy",
+      "renewable power"
+    ]
+  },
+  {
+    "name": "Climate transition plans",
+    "pillar": "Environmental",
+    "phrases": [
+      "transition plan",
+      "transition plans",
+      "decarbonisation strategy",
+      "decarbonization strategy"
+    ]
+  },
+  {
+    "name": "Scope 3 emissions",
+    "pillar": "Environmental",
+    "phrases": [
+      "scope 3",
+      "scope three"
+    ]
+  },
+  {
+    "name": "Net zero",
+    "pillar": "Environmental",
+    "phrases": [
+      "net zero",
+      "carbon neutrality"
+    ]
+  },
+  {
+    "name": "Water stewardship",
+    "pillar": "Environmental",
+    "phrases": [
+      "water stewardship",
+      "water withdrawal",
+      "water consumption",
+      "water use"
+    ]
+  },
+  {
+    "name": "Biodiversity",
+    "pillar": "Environmental",
+    "phrases": [
+      "biodiversity",
+      "ecosystem restoration",
+      "habitat restoration"
+    ]
+  },
+  {
+    "name": "Circular economy",
+    "pillar": "Environmental",
+    "phrases": [
+      "circular economy",
+      "circularity",
+      "material reuse"
+    ]
+  },
+  {
+    "name": "Climate risk",
+    "pillar": "Environmental",
+    "phrases": [
+      "climate risk",
+      "climate related risk",
+      "physical risks",
+      "transition risks"
+    ]
+  },
+  {
+    "name": "Waste management",
+    "pillar": "Environmental",
+    "phrases": [
+      "waste management",
+      "waste diverted",
+      "hazardous waste"
+    ]
+  },
+  {
+    "name": "Worker safety",
+    "pillar": "Social",
+    "phrases": [
+      "occupational safety",
+      "workplace safety",
+      "lost time injury",
+      "lost time injuries"
+    ]
+  },
+  {
+    "name": "Human rights",
+    "pillar": "Social",
+    "phrases": [
+      "human rights",
+      "forced labour",
+      "forced labor"
+    ]
+  },
+  {
+    "name": "Supply chain labour",
+    "pillar": "Social",
+    "phrases": [
+      "supplier code of conduct",
+      "supply chain labour",
+      "supply chain labor",
+      "supplier audits"
+    ]
+  },
+  {
+    "name": "Gender equity",
+    "pillar": "Social",
+    "phrases": [
+      "gender equality",
+      "gender equity",
+      "gender pay gap"
+    ]
+  },
+  {
+    "name": "Training and skills",
+    "pillar": "Social",
+    "phrases": [
+      "training hours",
+      "skills development",
+      "employee training"
+    ]
+  },
+  {
+    "name": "Community investment",
+    "pillar": "Social",
+    "phrases": [
+      "community investment",
+      "community engagement",
+      "community development"
+    ]
+  },
+  {
+    "name": "Employee wellbeing",
+    "pillar": "Social",
+    "phrases": [
+      "employee wellbeing",
+      "employee well being",
+      "mental health"
+    ]
+  },
+  {
+    "name": "Collective bargaining",
+    "pillar": "Social",
+    "phrases": [
+      "collective bargaining",
+      "trade unions",
+      "freedom of association"
+    ]
+  },
+  {
+    "name": "Just transition",
+    "pillar": "Social",
+    "phrases": [
+      "just transition",
+      "just energy transition"
+    ]
+  },
+  {
+    "name": "Accessibility",
+    "pillar": "Social",
+    "phrases": [
+      "accessibility",
+      "people with disabilities",
+      "persons with disabilities"
+    ]
+  },
+  {
+    "name": "Board independence",
+    "pillar": "Governance",
+    "phrases": [
+      "independent directors",
+      "independent director",
+      "board independence",
+      "independent board"
+    ]
+  },
+  {
+    "name": "Anti-corruption",
+    "pillar": "Governance",
+    "phrases": [
+      "anti corruption",
+      "anti bribery",
+      "bribery and corruption"
+    ]
+  },
+  {
+    "name": "Audit and assurance",
+    "pillar": "Governance",
+    "phrases": [
+      "audit committee",
+      "independent assurance",
+      "external assurance"
+    ]
+  },
+  {
+    "name": "Executive remuneration",
+    "pillar": "Governance",
+    "phrases": [
+      "executive remuneration",
+      "executive compensation",
+      "remuneration committee"
+    ]
+  },
+  {
+    "name": "Whistleblowing",
+    "pillar": "Governance",
+    "phrases": [
+      "whistleblowing",
+      "whistleblower",
+      "speak up"
+    ]
+  },
+  {
+    "name": "Risk management",
+    "pillar": "Governance",
+    "phrases": [
+      "risk management",
+      "enterprise risk"
+    ]
+  },
+  {
+    "name": "Data privacy",
+    "pillar": "Governance",
+    "phrases": [
+      "data privacy",
+      "data protection",
+      "personal data"
+    ]
+  },
+  {
+    "name": "Business ethics",
+    "pillar": "Governance",
+    "phrases": [
+      "business ethics",
+      "code of ethics",
+      "code of conduct"
+    ]
+  },
+  {
+    "name": "Board diversity",
+    "pillar": "Governance",
+    "phrases": [
+      "board diversity",
+      "diversity of the board"
+    ]
+  },
+  {
+    "name": "Information security",
+    "pillar": "Governance",
+    "phrases": [
+      "information security",
+      "cyber security",
+      "cybersecurity"
+    ]
+  }
+]

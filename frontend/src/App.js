@@ -1,3 +1,4 @@
+import PublicDemo from "./PublicDemo";
 import HomeDashboard from "./pages/HomeDashboard";
 import PageNotFound from "./pages/PageNotFound";
 import React from "react";
@@ -13,6 +14,7 @@ function App() {
         <Box>
           <Routes>
           <Route exact path="" element={<HomeDashboard />} />
+          <Route path="/explore" element={<PublicDemo />} />
           <Route exact path="/upload" element={<FileUploadPage />} />
           <Route exact path="*" element={<PageNotFound />} />
           <Route exact path="/company" element={<Company />} />

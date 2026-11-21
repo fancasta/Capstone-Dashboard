@@ -1,12 +1,20 @@
-# Exploring corporate climate disclosures
+# ESG Disclosure Dashboard
 
-[**Try the live dashboard →**](https://fancasta.github.io/climate-disclosure-explorer/) — explore Oracle, Anthropic and OpenAI reports in your browser.
+[**Open the live ESG Disclosure Explorer →**](https://fancasta.github.io/climate-disclosure-explorer/)　·　[Evidence notebook](https://fancasta.github.io/climate-disclosure-explorer/?view=notes)　·　[Research pipeline](https://github.com/fancasta/climate-disclosure-explorer)
 
-Which companies report a net-zero goal or a transition plan, and how common are those disclosures within an industry? This capstone dashboard lets a reader search for a company, inspect its reports and compare counts of reported practices across industries and years.
+How do companies describe water use, labour rights or board oversight, and where is the supporting passage? Search 3,035 extractable pages from 27 reports. Run a keyword search, choose one of 30 ESG topics or narrow the results to a publisher or sector. Every hit carries a PDF page reference.
 
-The dashboard opens on the reporting overview. Use **Company reports** to inspect an individual filing or **Published examples** to explore page-level findings from Oracle, Anthropic and OpenAI. The published examples are available even when the local report API is offline. [Case-study methods and sources](https://github.com/fancasta/climate-disclosure-explorer/blob/main/CASE_STUDIES.md)
+This dashboard grew out of the **NUS Business Analytics capstone for NatWest Markets**, August–December 2022. The team used machine learning to explore decarbonisation strategies. The original React, Node.js and MySQL application compares company indicators by sector and reporting year. The later public dashboard extends that work across environmental, social and governance topics.
 
-![Published report explorer with a page-level finding and a source link](docs/published-examples.png)
+[![Search results and sector counts for human rights](docs/esg-search.png)](https://fancasta.github.io/climate-disclosure-explorer/)
+
+| Guided search | Matching pages | Reports |
+| --- | ---: | ---: |
+| [Water stewardship](https://fancasta.github.io/climate-disclosure-explorer/?topic=Water+stewardship) | 126 | 24 |
+| [Collective bargaining](https://fancasta.github.io/climate-disclosure-explorer/?topic=Collective+bargaining) | 55 | 16 |
+| [Board independence](https://fancasta.github.io/climate-disclosure-explorer/?topic=Board+independence) | 24 | 9 |
+
+Try a custom search for [methane leakage](https://fancasta.github.io/climate-disclosure-explorer/?q=methane+leakage). The sector chart updates with the results. The heatmap shows the percentage of all indexed pages per sector containing a guided topic in each pillar. Topics overlap. Open a result to read source excerpts, or use the notebook for ten annotated examples and six reproducible page-ranking cases.
 
 ## From report rows to disclosure counts
 
@@ -31,4 +39,8 @@ With Docker running, execute `docker compose up --build` from the repository roo
 
 ## Build the public demo
 
-For the GitHub Pages build, set `REACT_APP_PUBLIC_DEMO=true`, `PUBLIC_URL=/climate-disclosure-explorer` and `GENERATE_SOURCEMAP=false` before running `npm ci` and `npm run build` in `frontend/`. The public entry uses the bundled case studies. The research repository serves the compiled index and static assets from its `gh-pages` branch.
+In `frontend`, run `npm ci`, set `REACT_APP_PUBLIC_DEMO=true`, `PUBLIC_URL=/climate-disclosure-explorer` and `GENERATE_SOURCEMAP=false`, then run `npm run build`. The build includes the page index and a PDF.js reader. The research repository serves these files from its `gh-pages` branch. The local full-stack app also exposes the public search at `/explore`.
+
+The [source manifest](search/sources.json) pins PDF editions with SHA-256. To rebuild the index, install PyMuPDF, clone the [research repository](https://github.com/fancasta/climate-disclosure-explorer), and download its three [additional publisher PDFs](https://github.com/fancasta/climate-disclosure-explorer/blob/main/examples/public-reports.json) into a separate folder. Run `python search/build_index.py PATH_TO_RESEARCH PATH_TO_PUBLISHER_PDFS` from this repository. The index retains physical page numbers and excludes seven pages without indexable terms.
+
+[Topic phrases](search/topics.json) · [Index builder](search/build_index.py) · [BM25 ranking and filters](frontend/src/corpusSearch.js)

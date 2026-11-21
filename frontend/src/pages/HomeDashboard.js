@@ -53,7 +53,7 @@ export default function HomeDashboard({ initialView = "Overview" }) {
   }
 
   return <main className="climate-shell">
-    <header className="climate-head"><h1>Climate disclosure explorer</h1>
+    <header className="climate-head"><h1>ESG disclosure dashboard</h1><p><a style={{color:"white"}} href="/explore">Search the public ESG report library ↗</a></p>
       <nav aria-label="Dashboard views">{views.map(item =>
         <button key={item} aria-pressed={view === item} onClick={() => setView(item)}>{item}</button>)}</nav>
     </header>

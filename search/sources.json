@@ -1,0 +1,272 @@
+[
+  {
+    "publisher": "BMW Brilliance Automotive",
+    "title": "Sustainability Report",
+    "edition": "2021",
+    "sector": "Automotive",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/automobile/BMW Sustainability Report 2021.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/automobile/BMW%20Sustainability%20Report%202021.pdf",
+    "sha256": "a5dc5e300a7108ecf7e1db828fd8529e47c7ece10e1ccb5ca79e9fac2f579a22"
+  },
+  {
+    "publisher": "General Motors",
+    "title": "Sustainability Report",
+    "edition": "2021",
+    "sector": "Automotive",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/automobile/GMC Sustainability Report 2021.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/automobile/GMC%20Sustainability%20Report%202021.pdf",
+    "sha256": "7221059bd97f02a368b0de2310ee9aab4526e02d812bd28e35aa323c72316efa"
+  },
+  {
+    "publisher": "Honda",
+    "title": "Sustainability Report",
+    "edition": "2021",
+    "sector": "Automotive",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/automobile/Honda Sustainability Report 2021.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/automobile/Honda%20Sustainability%20Report%202021.pdf",
+    "sha256": "ed33257d30638980f503566a891770e5742637e9d73828bd10e0d9019d576696"
+  },
+  {
+    "publisher": "Hyundai Motor Company",
+    "title": "Sustainability Report",
+    "edition": "2021",
+    "sector": "Automotive",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/automobile/Hyundai Sustainability Report 2021.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/automobile/Hyundai%20Sustainability%20Report%202021.pdf",
+    "sha256": "23beef61f4e9bf944fb012d526274b18f3f2acee99332625e252f747f48ee627"
+  },
+  {
+    "publisher": "Nissan",
+    "title": "Sustainability Report",
+    "edition": "2021",
+    "sector": "Automotive",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/automobile/Nissan Sustainability Report 2021.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/automobile/Nissan%20Sustainability%20Report%202021.pdf",
+    "sha256": "26638c8451456b434675abd1cc22ef3d9406432b5186899bd39c9a3cd41db99e"
+  },
+  {
+    "publisher": "American Electric Power",
+    "title": "EEI ESG/Sustainability Report",
+    "edition": "2021",
+    "sector": "Utilities",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/electrical/AEP 2021-EEI-ESGSustainabilityReportforInvestors_Carbon_8-9-21.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/electrical/AEP%202021-EEI-ESGSustainabilityReportforInvestors_Carbon_8-9-21.pdf",
+    "sha256": "4e48d8402aab785ea7442e0fe583b13ae5c12a394f6021d96b2d5aa8fdc7aacd"
+  },
+  {
+    "publisher": "EDF Group",
+    "title": "Impact Report",
+    "edition": "2021",
+    "sector": "Utilities",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/electrical/edfgroup_impact2021-rapport_va.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/electrical/edfgroup_impact2021-rapport_va.pdf",
+    "sha256": "46dfcfd759a6b99f39202256c5a8a4a4800f7254174b1d22c8aa82d3e3484a13"
+  },
+  {
+    "publisher": "Hawaiian Electric Industries",
+    "title": "Environmental, Social and Governance Report",
+    "edition": "2021",
+    "sector": "Utilities",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/electrical/HEI_ESG_2021_R8.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/electrical/HEI_ESG_2021_R8.pdf",
+    "sha256": "a89f24fb1b69d68790a566e8dbd64821a6f220c753f0a73c5fdffd91cf96d0ef"
+  },
+  {
+    "publisher": "NRG Energy",
+    "title": "Sustainability Report",
+    "edition": "2021",
+    "sector": "Utilities",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/electrical/nrg-2021-sustainability-report.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/electrical/nrg-2021-sustainability-report.pdf",
+    "sha256": "bd485a9483e3ec68268e1b513227a230149d50eb60bf54a27a998d9827de1a5d"
+  },
+  {
+    "publisher": "Origin Energy",
+    "title": "Sustainability Report",
+    "edition": "2021",
+    "sector": "Utilities",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/electrical/Origin_Sustainability_Report_2021.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/electrical/Origin_Sustainability_Report_2021.pdf",
+    "sha256": "1b1cf0514b507a30ece5df7229c40461c064766b2991cbcea3aef086c83ab035"
+  },
+  {
+    "publisher": "Tata Power",
+    "title": "Business Responsibility & Sustainability Report",
+    "edition": "2021–22",
+    "sector": "Utilities",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/electrical/Tata business-responsibility-sustainability-report-fy21-22.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/electrical/Tata%20business-responsibility-sustainability-report-fy21-22.pdf",
+    "sha256": "679dfd6e0da193a971eed3b45128e59657e5f54f64c51078f7e5a722319e7d4c"
+  },
+  {
+    "publisher": "OMV Petrom",
+    "title": "Sustainability Report",
+    "edition": "2021",
+    "sector": "Oil and gas",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/oil_gas/2021-sustainability-report-.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/oil_gas/2021-sustainability-report-.pdf",
+    "sha256": "eff1e0f48a825ce298d398abf04b3decfb411e7001daee1ccd116887e77cfba1"
+  },
+  {
+    "publisher": "bp",
+    "title": "Sustainability Report",
+    "edition": "2021",
+    "sector": "Oil and gas",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/oil_gas/bp-sustainability-report-2021.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/oil_gas/bp-sustainability-report-2021.pdf",
+    "sha256": "74079e1a0c09cb5078b5c875d4d7da49096bb57f18c2e471e69833ed01ca76dd"
+  },
+  {
+    "publisher": "Eni",
+    "title": "Eni for 2021: A Just Transition",
+    "edition": "2021",
+    "sector": "Oil and gas",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/oil_gas/eni-for-2021-just-transition-eng.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/oil_gas/eni-for-2021-just-transition-eng.pdf",
+    "sha256": "0a52f312a5a2fc0dc578b3ec558965eb6f7775c3ba4f87aaf3d10f2aee53f741"
+  },
+  {
+    "publisher": "Shell",
+    "title": "Annual Report and Accounts",
+    "edition": "2021",
+    "sector": "Oil and gas",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/oil_gas/NYSE_RDS_2021-unlocked.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/oil_gas/NYSE_RDS_2021-unlocked.pdf",
+    "sha256": "1bebd0fa6af6c97bc41e95934a74a3ca19c3bd788380484bb42317478f65121e"
+  },
+  {
+    "publisher": "TotalEnergies",
+    "title": "Sustainability & Climate Progress Report",
+    "edition": "2022",
+    "sector": "Oil and gas",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/oil_gas/Sustainability_Climate_2022_Progress_Report_accessible_version_EN.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/oil_gas/Sustainability_Climate_2022_Progress_Report_accessible_version_EN.pdf",
+    "sha256": "a2c85db9a93fb36476a9e76cf78eb39b3e6b43a08f285750862bd308892b125d"
+  },
+  {
+    "publisher": "British Land",
+    "title": "Sustainability Accounts",
+    "edition": "2022",
+    "sector": "Real estate",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/real_estate/British Land 2022 Sustainability Report.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/real_estate/British%20Land%202022%20Sustainability%20Report.pdf",
+    "sha256": "a289cb19e4e3500d2e82a4b56924d74c1b72f5f32da63c277386531e4e6e5c9d"
+  },
+  {
+    "publisher": "City Developments Limited",
+    "title": "Integrated Sustainability Report",
+    "edition": "2022",
+    "sector": "Real estate",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/real_estate/CDL 2022 Sustainability Report.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/real_estate/CDL%202022%20Sustainability%20Report.pdf",
+    "sha256": "f985de412ae2b6cdf789e44392774f473d3af70ef6cece21159622b4ee0d025d"
+  },
+  {
+    "publisher": "GPT Group",
+    "title": "Climate Disclosure Statement",
+    "edition": "2021",
+    "sector": "Real estate",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/real_estate/GPT 2021 Sustainability Report.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/real_estate/GPT%202021%20Sustainability%20Report.pdf",
+    "sha256": "12aa418448d237c67d2614cac38c6fd66b5ea3798b1a2d28b55dca25dd9c7ad8"
+  },
+  {
+    "publisher": "Klépierre",
+    "title": "Universal Registration Document",
+    "edition": "2021",
+    "sector": "Real estate",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/real_estate/Klepierre 2021 URD.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/real_estate/Klepierre%202021%20URD.pdf",
+    "sha256": "9ad171a2c0324bc869244afb2cbbaaf72c92089a2c480e19068db3c01984417c"
+  },
+  {
+    "publisher": "Swire Pacific",
+    "title": "Sustainable Development Report",
+    "edition": "2021",
+    "sector": "Diversified",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/sample_datasets/real_estate/Swire Pacific 2021 Sustainability Report.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/sample_datasets/real_estate/Swire%20Pacific%202021%20Sustainability%20Report.pdf",
+    "sha256": "c34c9b12ead28aaeed314955187ec8d9a77a699c56d8e026f8c66d2aa1d1e083"
+  },
+  {
+    "publisher": "alstria office REIT",
+    "title": "Sustainability Report",
+    "edition": "2020–21",
+    "sector": "Real estate",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/test_dataset/documents/alstria_Sustainability_Report_2020_2021-1.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/test_dataset/documents/alstria_Sustainability_Report_2020_2021-1.pdf",
+    "sha256": "83b3c4d598c77ef1f6b3f6d1671e267532afcfe719450da9ba4272adcdf5d0f5"
+  },
+  {
+    "publisher": "Citycon",
+    "title": "Sustainability Accounts",
+    "edition": "2021",
+    "sector": "Real estate",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/test_dataset/documents/sustainability-accounts-2021-citycon(2).pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/test_dataset/documents/sustainability-accounts-2021-citycon%282%29.pdf",
+    "sha256": "0ea83923a10675f77703c5233a81eb842ae2756f661ecd94b996035988d3c5bb"
+  },
+  {
+    "publisher": "UBM Development",
+    "title": "ESG Report",
+    "edition": "2021",
+    "sector": "Real estate",
+    "kind": "Corporate report",
+    "path": "pipeline/Notebooks/test_dataset/documents/ubm_esg_report_2021.pdf",
+    "url": "https://raw.githubusercontent.com/fancasta/climate-disclosure-explorer/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/test_dataset/documents/ubm_esg_report_2021.pdf",
+    "sha256": "306ba5148cf0ba406050d9251d56681bce9218c1c77c84791938a1ec188b51c7"
+  },
+  {
+    "publisher": "Oracle",
+    "title": "Environmental and Social Impact Report",
+    "edition": "FY2024",
+    "sector": "Technology",
+    "kind": "Corporate disclosure",
+    "path": "Oracle.pdf",
+    "url": "https://www.oracle.com/a/ocom/docs/environmental-and-social-impact-report-2024.pdf",
+    "sha256": "f4c5b5250f5170de280ca0da9e114da7287e16c49fb4c4ca41f0c9e4714c18cd"
+  },
+  {
+    "publisher": "Anthropic",
+    "title": "Build AI in America",
+    "edition": "2025",
+    "sector": "Technology",
+    "kind": "Policy report",
+    "path": "Anthropic.pdf",
+    "url": "https://assets.claude.com/0dc382a2086f6a054eeb17e8a531bd9625b8e6e5.pdf",
+    "sha256": "c929d73be07db93086f78818bd5145caee2d01da7344b93e1c2d7966e96e71bf"
+  },
+  {
+    "publisher": "OpenAI",
+    "title": "AI Infrastructure That Works for America",
+    "edition": "2026",
+    "sector": "Technology",
+    "kind": "Policy blueprint",
+    "path": "OpenAI.pdf",
+    "url": "https://cdn.openai.com/pdf/compute-campus-policy-blueprint.pdf",
+    "sha256": "dd44ad43a77545863468e47dc27b684653c318d6b6a1fa097983c1e48e7d3219"
+  }
+]

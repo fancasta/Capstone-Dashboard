@@ -1,0 +1,82 @@
+[
+  {
+    "publisher": "NRG Energy",
+    "page": 42,
+    "pillar": "Environmental",
+    "title": "Water at power stations",
+    "excerpt": "cooling towers that reduce water consumption and environmental impact",
+    "note": "NRG describes how plant design and the choice of water source can reduce freshwater demand."
+  },
+  {
+    "publisher": "British Land",
+    "page": 8,
+    "pillar": "Environmental",
+    "title": "Biodiversity in new developments",
+    "excerpt": "designed to achieve a 10% net gain in biodiversity",
+    "note": "This is a design target for new construction and major renovations. The unit is biodiversity gain."
+  },
+  {
+    "publisher": "Oracle",
+    "page": 37,
+    "pillar": "Environmental",
+    "title": "Electricity used by the cloud",
+    "excerpt": "92% renewable electricity use in the cloud",
+    "note": "The cloud figure has a different scope from the regional data-centre metrics printed on the same page."
+  },
+  {
+    "publisher": "Tata Power",
+    "page": 14,
+    "pillar": "Social",
+    "title": "Human-rights training",
+    "excerpt": "Employees and workers who have been provided training on human rights",
+    "note": "The table breaks training coverage down by worker category and reporting year."
+  },
+  {
+    "publisher": "TotalEnergies",
+    "page": 48,
+    "pillar": "Social",
+    "title": "People affected by the energy transition",
+    "excerpt": "a just transition for our employees and partners",
+    "note": "The report connects its energy strategy to workforce and partner commitments."
+  },
+  {
+    "publisher": "Hyundai Motor Company",
+    "page": 34,
+    "pillar": "Social",
+    "title": "Human-rights risk assessment",
+    "excerpt": "Report human rights management activities and results",
+    "note": "The process diagram separates policy, assessment and reporting."
+  },
+  {
+    "publisher": "Shell",
+    "page": 158,
+    "pillar": "Governance",
+    "title": "Who sits on the audit committee?",
+    "excerpt": "All AC members are financially literate, independent Non-executive Directors.",
+    "note": "This passage describes the membership of the audit committee. Its scope is narrower than the full board."
+  },
+  {
+    "publisher": "City Developments Limited",
+    "page": 38,
+    "pillar": "Governance",
+    "title": "A board diversity pledge",
+    "excerpt": "In 2015, CDL supported the Board Diversity Pledge",
+    "note": "This page traces the company’s board diversity policy to a dated commitment."
+  },
+  {
+    "publisher": "Anthropic",
+    "page": 5,
+    "pillar": "Environmental",
+    "title": "A US electricity capacity forecast",
+    "excerpt": "at least 50 gigawatts (GW) of electric capacity by 2028",
+    "note": "Anthropic models US AI-sector capacity requirements. The number is a forecast."
+  },
+  {
+    "publisher": "OpenAI",
+    "page": 8,
+    "pillar": "Environmental",
+    "title": "A proposal for facility reporting",
+    "excerpt": "annual power usage effectiveness (PUE) using consistent measurement methods",
+    "note": "OpenAI proposes a reporting method. A reader looking for measured PUE needs a separate disclosure."
+  }
+]
