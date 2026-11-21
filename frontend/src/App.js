@@ -13,7 +13,8 @@ function App() {
       <Router>
         <Box>
           <Routes>
-          <Route exact path="" element={<HomeDashboard />} />
+          <Route path="/" element={<PublicDemo />} />
+          <Route path="/workspace" element={<HomeDashboard />} />
           <Route path="/explore" element={<PublicDemo />} />
           <Route exact path="/upload" element={<FileUploadPage />} />
           <Route exact path="*" element={<PageNotFound />} />

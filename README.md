@@ -1,12 +1,12 @@
 # ESG Disclosure Dashboard
 
-[**Open the live ESG Disclosure Explorer →**](https://fancasta.github.io/climate-disclosure-explorer/)　·　[Evidence notebook](https://fancasta.github.io/climate-disclosure-explorer/?view=notes)　·　[Research pipeline](https://github.com/fancasta/climate-disclosure-explorer)
+[**Open the live ESG Disclosure Explorer →**](https://fancasta.github.io/climate-disclosure-explorer/)　·　[Company directory](https://fancasta.github.io/climate-disclosure-explorer/?view=explore)　·　[Research pipeline](https://github.com/fancasta/climate-disclosure-explorer)
 
 How do companies describe water use, labour rights or board oversight, and where is the supporting passage? Search 3,035 extractable pages from 27 reports. Run a keyword search, choose one of 30 ESG topics or narrow the results to a publisher or sector. Every hit carries a PDF page reference.
 
 This dashboard grew out of the **NUS Business Analytics capstone for NatWest Markets**, August–December 2022. The team used machine learning to explore decarbonisation strategies. The original React, Node.js and MySQL application compares company indicators by sector and reporting year. The later public dashboard extends that work across environmental, social and governance topics.
 
-[![Search results and sector counts for human rights](docs/esg-search.png)](https://fancasta.github.io/climate-disclosure-explorer/)
+[![Home page with a cited report passage and questions to explore](docs/esg-home.png)](https://fancasta.github.io/climate-disclosure-explorer/)
 
 | Guided search | Matching pages | Reports |
 | --- | ---: | ---: |
@@ -14,7 +14,21 @@ This dashboard grew out of the **NUS Business Analytics capstone for NatWest Mar
 | [Collective bargaining](https://fancasta.github.io/climate-disclosure-explorer/?topic=Collective+bargaining) | 55 | 16 |
 | [Board independence](https://fancasta.github.io/climate-disclosure-explorer/?topic=Board+independence) | 24 | 9 |
 
-Try a custom search for [methane leakage](https://fancasta.github.io/climate-disclosure-explorer/?q=methane+leakage). Oracle’s publisher serves the full PDF in its own viewer. Selected Oracle pages have verified excerpts and editorial notes in the explorer. The sector chart updates with the results. The heatmap shows the percentage of all indexed pages per sector containing a guided topic in each pillar. Topics overlap. Open a result to read source excerpts, or use the notebook for ten annotated examples and six reproducible page-ranking cases.
+## Follow a finding to its source
+
+1. Open a question from Home, or search the directory by keyword, topic or company.
+2. Compare the matching companies. Each count is the number of matching PDF pages in that company’s report. Use the sector filter to narrow the list.
+3. Select a company to read its passages, then open a cited page to inspect the report in context.
+
+Try [methane leakage](https://fancasta.github.io/climate-disclosure-explorer/?q=methane+leakage) as a keyword search or [renewable electricity in the diversified sector](https://fancasta.github.io/climate-disclosure-explorer/?topic=Renewable+electricity&sector=Diversified). Archived reports open in a page viewer with selectable text. The three later technology publications also appear in the directory.
+
+[![Company results for renewable electricity in the diversified sector](docs/esg-results.png)](https://fancasta.github.io/climate-disclosure-explorer/?topic=Renewable+electricity&sector=Diversified)
+
+## Local reporting workspace
+
+The original database-backed workspace is available at `/workspace` in the full-stack app.
+
+The 2022 dashboard paired nine climate-disclosure indicators with supporting sentences. For the long-term net-zero classifier, the training data contains 1,003 labelled sentences, including 196 positive examples. [Original labelled dataset](https://github.com/CWei88/Group17-Capstone/blob/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/training_datasets/Attribute%2012/A12.csv) · [Dashboard schema](https://github.com/fancasta/esg-disclosure-dashboard/blob/538607eb71014d29e5b3d88bc7a8a49bde72fdd9/mysql/backup.sql)
 
 ## From report rows to disclosure counts
 
@@ -35,7 +49,7 @@ The React frontend requests company and report records from a Node.js backend. T
 
 ## Run locally
 
-With Docker running, execute `docker compose up --build` from the repository root. Open `http://localhost:3000`, select a company and inspect its reports, or choose a year and industry in the summary chart. The API uses port `6868` and the local Adminer database viewer uses port `8000`. Run `docker compose down` to stop the services.
+With Docker running, execute `docker compose up --build` from the repository root. Open `http://localhost:3000/workspace`, select a company and inspect its reports, or choose a year and industry in the summary chart. The API uses port `6868` and the local Adminer database viewer uses port `8000`. Run `docker compose down` to stop the services.
 
 ## Build the public demo
 

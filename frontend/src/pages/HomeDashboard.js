@@ -3,11 +3,10 @@ import axios from "axios";
 import DataSummary from "../components/DataSummary";
 import FileUpload from "../components/FileUpload";
 import Report from "../components/Report";
-import PublishedExamples from "../components/PublishedExamples";
 import "./explorer.css";
 
 const api = "http://localhost:6868";
-const views = ["Overview", "Company reports", "Published examples"];
+const views = ["Overview", "Company reports"];
 
 export default function HomeDashboard({ initialView = "Overview" }) {
   const [view, setView] = useState(initialView);
@@ -28,7 +27,7 @@ export default function HomeDashboard({ initialView = "Overview" }) {
         setRows(reports.data);
         setStatus("");
       })
-      .catch(() => { if (active) setStatus("Local reports are unavailable. Start the API or open Published examples."); });
+      .catch(() => { if (active) setStatus("Local reports are unavailable. Start the API or use the public report library."); });
     return () => { active = false; };
   }, []);
 
@@ -53,11 +52,10 @@ export default function HomeDashboard({ initialView = "Overview" }) {
   }
 
   return <main className="climate-shell">
-    <header className="climate-head"><h1>ESG disclosure dashboard</h1><p><a style={{color:"white"}} href="/explore">Search the public ESG report library ↗</a></p>
+    <header className="climate-head"><h1>ESG disclosure dashboard</h1><p><a style={{color:"white"}} href="/?view=explore">Search the public ESG report library ↗</a></p>
       <nav aria-label="Dashboard views">{views.map(item =>
         <button key={item} aria-pressed={view === item} onClick={() => setView(item)}>{item}</button>)}</nav>
     </header>
-    {view === "Published examples" ? <PublishedExamples /> : <>
       {status && <p role="status" className="climate-card">{status}</p>}
       {view === "Overview" ? <>
         <div className="climate-totals">{[
@@ -75,6 +73,5 @@ export default function HomeDashboard({ initialView = "Overview" }) {
         {companyStatus && <p role="status">{companyStatus}</p>}
         {records[selected] && <Report Report={records[selected]} />}
       </section>}
-    </>}
   </main>;
 }
