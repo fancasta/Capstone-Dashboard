@@ -1,0 +1,31 @@
+{
+  "36": {
+    "excerpt": "33% reduction in potable water use per square foot",
+    "note": "Oracle lists an intensity target. Compare the target year and floor-area denominator with the absolute water figures in other reports."
+  },
+  "37": {
+    "excerpt": "92% renewable electricity use in the cloud",
+    "note": "This figure applies to Oracle’s cloud electricity. The regional data-centre measures on the same page have a different scope."
+  },
+  "38": {
+    "note": "The report describes the design of Oracle Cloud Infrastructure and how its operating model can affect the resources customers use."
+  },
+  "42": {
+    "note": "Oracle describes how it procures materials, ships products and manages resource use and waste in operations."
+  },
+  "43": {
+    "note": "Supplier reporting covers carbon, water and waste. The page explains how Oracle engages suppliers on environmental goals."
+  },
+  "59": {
+    "note": "Oracle discusses product accessibility standards and how it applies them in product development."
+  },
+  "85": {
+    "note": "This GRI index page points readers from diversity and inclusion disclosures to the sections where Oracle reports on them."
+  },
+  "89": {
+    "note": "This GRI index entry identifies sources for water withdrawals and explains limitations in Oracle’s access to water data."
+  },
+  "90": {
+    "note": "This GRI index page points to waste disposal and supplier environmental assessment disclosures."
+  }
+}

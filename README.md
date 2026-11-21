@@ -14,7 +14,7 @@ This dashboard grew out of the **NUS Business Analytics capstone for NatWest Mar
 | [Collective bargaining](https://fancasta.github.io/climate-disclosure-explorer/?topic=Collective+bargaining) | 55 | 16 |
 | [Board independence](https://fancasta.github.io/climate-disclosure-explorer/?topic=Board+independence) | 24 | 9 |
 
-Try a custom search for [methane leakage](https://fancasta.github.io/climate-disclosure-explorer/?q=methane+leakage). The sector chart updates with the results. The heatmap shows the percentage of all indexed pages per sector containing a guided topic in each pillar. Topics overlap. Open a result to read source excerpts, or use the notebook for ten annotated examples and six reproducible page-ranking cases.
+Try a custom search for [methane leakage](https://fancasta.github.io/climate-disclosure-explorer/?q=methane+leakage). Oracle’s publisher serves the full PDF in its own viewer. Selected Oracle pages have verified excerpts and editorial notes in the explorer. The sector chart updates with the results. The heatmap shows the percentage of all indexed pages per sector containing a guided topic in each pillar. Topics overlap. Open a result to read source excerpts, or use the notebook for ten annotated examples and six reproducible page-ranking cases.
 
 ## From report rows to disclosure counts
 

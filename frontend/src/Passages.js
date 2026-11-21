@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import oracleNotes from "./oraclePageNotes.json";
 import { words } from "./corpusSearch";
 
 let pdfModule;
@@ -30,8 +31,10 @@ export default function Passages({report, page, query}) {
   const [open, setOpen] = useState(false);
   const [view, setView] = useState({state:"loading"});
   const queryKey = query.join(" ");
+  const publisherViewer = report.publisher === "Oracle";
+  const pageNote = publisherViewer ? oracleNotes[page] : null;
   useEffect(() => {
-    if (!open) return;
+    if (!open || publisherViewer) return;
     let alive = true, task;
     setView({state:"loading"});
     async function load() {
@@ -45,10 +48,16 @@ export default function Passages({report, page, query}) {
     }
     load().catch(() => {if (alive) setView({state:"source"});});
     return () => {alive = false; if (task) task.destroy().catch(()=>{});};
-  },[open, report.url, page, queryKey]);
-  return <div className="passages"><button className="text-action" aria-expanded={open} onClick={() => setOpen(!open)}>{open ? "Close passages" : "Read page excerpts"} {open ? "−" : "+"}</button>
+  },[open, report.url, page, queryKey, publisherViewer]);
+  if (publisherViewer && !pageNote) return null;
+  const label = publisherViewer && !pageNote?.excerpt ? "Read page note" : "Read page excerpts";
+  return <div className="passages"><button className="text-action" aria-expanded={open} onClick={() => setOpen(!open)}>{open ? "Close reading" : label} {open ? "−" : "+"}</button>
     {open && <div className="passage-panel" role="status">
-      {view.state === "loading" ? "Opening the source PDF…" : view.state === "source" ? <p>The publisher requires its own PDF viewer. <a href={report.url+"#page="+page} target="_blank" rel="noreferrer">Open page {page} ↗</a></p> :
+      {pageNote ? <>
+        {pageNote.excerpt && <blockquote>“{pageNote.excerpt}”</blockquote>}
+        <p><strong>Reading note.</strong> {pageNote.note}</p>
+        <a href={report.url+"#page="+page} target="_blank" rel="noreferrer">Read this page in Oracle’s viewer ↗</a>
+      </> : view.state === "loading" ? "Opening the source PDF…" : view.state === "source" ? <p>The publisher requires its own PDF viewer. <a href={report.url+"#page="+page} target="_blank" rel="noreferrer">Open page {page} ↗</a></p> :
         view.passages.length ? view.passages.map(p => <blockquote key={p.order}>{p.value}</blockquote>) : "This page has no extractable passage."}
     </div>}</div>;
 }

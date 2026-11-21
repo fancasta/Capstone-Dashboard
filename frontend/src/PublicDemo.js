@@ -137,7 +137,7 @@ function Explorer({catalog,terms}) {
             <h3>{r.publisher}</h3><p className="report-title">{r.title} · {r.kind}</p>
             {n&&<blockquote>“{n.excerpt}”</blockquote>}
             {h.labels.length>0&&<div className="match-tags">{(chosen?[topic,...h.labels.filter(i=>i!==topic)]:h.labels).slice(0,4).map(i=><button key={i} onClick={()=>pick(i)}>{topics[i].name}</button>)}</div>}
-            <div className="hit-links"><a href={r.url+"#page="+h.page} target="_blank" rel="noreferrer">Source PDF ↗</a><Passages report={r} page={h.page} query={chosen?chosen.phrases:[query]}/></div></article>;
+            <div className="hit-links"><a href={r.url+"#page="+h.page} target="_blank" rel="noreferrer">{r.publisher==="Oracle"?"Open Oracle PDF ↗":"Source PDF ↗"}</a><Passages report={r} page={h.page} query={chosen?chosen.phrases:[query]}/></div></article>;
         })}
         {pages>1&&<div className="pager"><button className="outline" disabled={!pageNo} onClick={()=>setPageNo(n=>n-1)}>Previous</button><span>Page {format(pageNo+1)} of {format(pages)}</span><button className="outline" disabled={pageNo+1>=pages} onClick={()=>setPageNo(n=>n+1)}>Next</button></div>}
       </section><Coverage catalog={catalog} hits={hits} sector={sector} chooseSector={v=>setSectorFilter(v===sector?"":v)} chooseTopic={pick}/></div>
@@ -145,7 +145,7 @@ function Explorer({catalog,terms}) {
     <details className="method"><summary>About the capstone and search method</summary>
       <p>From August to December 2022, an NUS Business Analytics team worked with NatWest Markets on using machine learning to explore corporate decarbonisation strategies. The public explorer adds cross-report environmental, social and governance search to that project.</p>
       <p>The collection covers {format(reports.reduce((a,r)=>a+r.pages,0))} physical PDF pages. Search includes {format(catalog.pages.length)} pages with extractable terms. Free-text queries require all significant words and rank matching pages using BM25. Topic searches match a listed phrase and rank those pages using the phrase vocabulary. Charts count pages and overlap across topics. Reporting a topic does not establish performance.</p>
-      <p>The browser reads excerpts from the source PDF on demand. Open the cited page to review tables, footnotes and the original layout. <a href={casesUrl}>Read the worked examples ↗</a></p></details></main>
+      <p>The browser reads excerpts from the source PDF on demand. Oracle opens full pages in its own viewer. Selected Oracle pages also have verified excerpts or reading notes in the dashboard. Open the cited page to review tables, footnotes and the original layout. <a href={casesUrl}>Read the worked examples ↗</a></p></details></main>
     <footer className="frame esg-foot"><a href={sourceUrl}>Dashboard code ↗</a><a href={casesUrl}>Methods and case studies ↗</a></footer></>;
 }
 
